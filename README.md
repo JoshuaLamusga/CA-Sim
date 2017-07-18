@@ -59,6 +59,12 @@ There are many varieties of automata that aren't considered in this implementati
 - Allow for a larger Moore's neighborhood in 1-D and 2-D automata so directional, totalistic, and temporal rulesets can be made more complex.
 - Create 1-D and 2-D automata with a different topology such that cells have more/fewer neighbors, like a triangle or hexagon grid.
 - Allow for more than two states in 1-D and 2-D automata.
+- Implement saving and loading rules as text, and saving/loading the list of cell states for an automaton.
+- Keep temporal lists of cell values (perhaps by making the current value the most recent value in a list).
+- Implement a Von Neumann neighborhood and Moore neighborhoods > 1.
+- Make it possible to implement WireWorld, Immigration Game / Rainbow Game of Life, and Cyclic automata
+- Allow the starting direction of ants to be set and have more ants that turn diagonals.
+- Implement Patterson's Worms.
 
 ## Bugs
 These bugs should be easy to fix if you have time; I wrote this awhile ago when I was new to C# and thought I'd never share this project.
@@ -74,9 +80,3 @@ There are a lot of things to improve on in this project for usability.
 - Setting changes should update with open simulation windows, or main window should be disabled while a simulation is open.
 - Settings that don't make sense with a given automata type should be disabled, such as columns in a 1-D simmulation.
 - If the main window is closed, child windows should be closed as well.
-- Implement saving and loading rules as text, and saving/loading the list of cell states for an automaton.
-- Keep temporal lists of cell values (perhaps by making the current value the most recent value in a list).
-- Implement a Von Neumann neighborhood and Moore neighborhoods > 1.
-- Make it possible to implement WireWorld, Immigration Game / Rainbow Game of Life, and Cyclic automata
-- Allow the starting direction of ants to be set and have more ants that turn diagonals.
-- Implement Patterson's Worms.
