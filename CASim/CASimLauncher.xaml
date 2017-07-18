@@ -1,0 +1,160 @@
+﻿<Window x:Class="CASimulator.CASimLauncher"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="CASimLauncher" Height="245" Width="310">
+    <Grid>
+        <Grid.RowDefinitions> <!-- 11 rows -->
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions> <!-- 3 columns -->
+            <ColumnDefinition Width="auto"></ColumnDefinition>
+            <ColumnDefinition Width="auto"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <!-- Create title text -->
+        <TextBlock
+            x:Name="guiTitle"
+            FontSize="16"
+            FontWeight="Bold"
+            Grid.ColumnSpan="5"
+            Grid.Row="0"
+            HorizontalAlignment="Center"
+            Padding="10px"
+            Text="C.A. Simulator 1.0"/>
+        <StackPanel
+            x:Name="containerRadio"
+            Grid.Row="1"
+            Grid.ColumnSpan="2"
+            Grid.RowSpan="3"
+            Margin="10 0 0 0">
+            <TextBlock
+                FontWeight="Bold"
+                Text="Type"/>
+            <RadioButton
+                x:Name="bttn1d"
+                GroupName="simtype"
+                Checked="bttn1d_Checked">
+                One-dimensional
+            </RadioButton>
+            <RadioButton
+                x:Name="bttn2d"
+                GroupName="simtype"
+                Checked="bttn2d_Checked"
+                IsChecked="True">
+                Two-dimensional
+            </RadioButton>
+            <RadioButton
+                x:Name="bttnant"
+                GroupName="simtype"
+                Checked="bttnant_Checked">
+                Langston's Ant
+            </RadioButton>
+        </StackPanel>
+        <StackPanel
+            x:Name="containerCellSize"
+            Grid.Row="1"
+            Grid.Column="1"
+            Orientation="Horizontal">
+            <TextBlock Text="cell size: "/>
+            <TextBox
+                x:Name="txbxCellSize"
+                Text="4"
+                TextChanged="txbxCellSize_TextChanged"
+                MaxWidth="50px"/>
+        </StackPanel>
+        <StackPanel
+            x:Name="containerCellRows"
+            Grid.Row="2"
+            Grid.Column="1"
+            Orientation="Horizontal"
+            Margin="0 2 0 0">
+            <TextBlock Text="# rows: "/>
+            <TextBox
+                x:Name="txbxCellRows"
+                Grid.Row="4"
+                Text="10"
+                TextChanged="txbxCellRows_TextChanged"
+                MaxWidth="50px">
+            </TextBox>
+        </StackPanel>
+        <StackPanel
+            x:Name="ContainerCellCols"
+            Grid.Row="3"
+            Grid.Column="1"
+            Orientation="Horizontal"
+            Margin="0 2 0 0">
+            <TextBlock Text="# cols:  "/>
+            <TextBox
+                x:Name="txbxCellCols"
+                TextChanged="txbxCellCols_TextChanged"
+                MaxWidth="50px">
+                10
+            </TextBox>
+        </StackPanel>
+        <StackPanel
+            x:Name="ContainerIsWrapped"
+            Grid.Row="6"
+            Orientation="Horizontal"
+            Margin="10 0 0 0">
+            <TextBlock Text="Wrap around? "/>
+            <CheckBox x:Name="chkbxWrap"
+                VerticalAlignment="Center"
+                Checked="chkbxWrap_Checked"
+                Unchecked="chkbxWrap_Checked"
+                IsChecked="True"/>
+        </StackPanel>
+        <StackPanel
+            x:Name="ContainerUpdateSpeed"
+            Grid.Row="7"
+            Grid.Column="0"
+            Orientation="Horizontal"
+            Margin="10 0 0 0">
+            <TextBlock Text="update speed (in ms): " VerticalAlignment="Center"/>
+            <TextBox
+                x:Name="txbxUpdateSpeed"
+                Text="100"
+                MaxWidth="50px"
+                TextChanged="txbxUpdateSpeed_TextChanged">
+            </TextBox>
+        </StackPanel>
+        <StackPanel
+            x:Name="ContainerRules"
+            Grid.Row="8"
+            Grid.Column="0"
+            Orientation="Horizontal"
+            Margin="10 2 0 0">
+            <TextBlock
+                Text="rules: "
+                VerticalAlignment="Center"/>
+            <TextBox
+                x:Name="txbxRules"
+                Text="See the help for details."
+                TextChanged="txbxRules_TextChanged"
+                Width="150px"
+                MaxWidth="150px"/>
+            <Button
+                x:Name="bttnHelp"
+                Content="Help" Click="bttnHelp_Click"/>
+        </StackPanel>
+        <Button
+            x:Name="bttnLaunch"
+            Grid.ColumnSpan="3"
+            Grid.Row="9"
+            Width="50"
+            Margin="10"
+            Click="bttnLaunch_Click"
+            IsEnabled="False">            
+            Launch
+        </Button>
+    </Grid>
+</Window>

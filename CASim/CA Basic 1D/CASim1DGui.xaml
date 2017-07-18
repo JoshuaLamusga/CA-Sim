@@ -1,0 +1,12 @@
+﻿<Window x:Class="CASimulator.CASim1DGui"
+        x:Name="window"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Cellular Automaton Simulation (1D)">
+        <ScrollViewer
+            x:Name="scrollwindow"
+            VerticalScrollBarVisibility="Auto"
+            HorizontalScrollBarVisibility="Disabled">
+            <Image x:Name="display"></Image>
+        </ScrollViewer>
+</Window>

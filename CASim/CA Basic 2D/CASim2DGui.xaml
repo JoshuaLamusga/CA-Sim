@@ -1,0 +1,7 @@
+﻿<Window x:Class="CASimulator.CASim2DGui"
+        x:Name="window"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Cellular Automaton Simulation (2D)">
+    <Image x:Name="display" Stretch="None"></Image>
+</Window>

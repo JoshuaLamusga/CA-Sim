@@ -1,0 +1,141 @@
+﻿<Window x:Class="CASimulator.CASimAbout"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="CASimAbout" Height="300" Width="400">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <TextBlock
+            Grid.Row="0"
+            Padding="4px"
+            HorizontalAlignment="Center"
+            FontSize="24px"
+            Text="C.A. Simulator"/>
+        <TextBlock
+            Grid.Row="1"
+            Padding="0,0,0,16px"
+            HorizontalAlignment="Center"
+            FontSize="12px"
+            FontStyle="Italic"
+            Text="Version 1.0"/>
+        <TextBlock
+            Grid.Row="3"
+            HorizontalAlignment="Center"
+            FontSize="12px"
+            FontWeight="Bold"
+            Text="Copyright © Joshua Lamusga, 2015"/>
+        <ScrollViewer
+            Grid.Row="2"
+            Padding="4px"
+            HorizontalScrollBarVisibility="Disabled"
+            VerticalScrollBarVisibility="Visible">
+            <TextBlock
+                TextWrapping="Wrap">
+                    Simulates all of Wolfram's 1-D and most of the 2-D elementary automata
+                    (such as Conway's Game of Life), as well as Langston's Ant.
+                    <LineBreak/>
+                    <LineBreak/>
+                    CONTROLS
+                    <LineBreak/>
+                    Left-click: Increment cell state
+                    <LineBreak/>
+                    Right-click: Decrement cell state
+                    <LineBreak/>
+                    Spacebar: Pause/resume simulation
+                    <LineBreak/>
+                    1: Skip 50 generations.
+                    <LineBreak/>
+                    2: Skip 100 generations.
+                    <LineBreak/>
+                    3: Skip 500 generations.
+                    <LineBreak/>
+                    Enter: Set all cells to random binary states, 0 or 1.
+                    <LineBreak/>
+                    Escape: Set all cells to initial state 0.
+                    <LineBreak/>
+                    Right arrow: Apply one generation update.
+                    <LineBreak/>
+                    Double-click: Increment/set ant state. Langston's ant mode only.
+                    <LineBreak/>
+                    Shift + Double-click: Decrement/remove ant state. Langston's ant mode only.
+                    <LineBreak/>
+                    <LineBreak/>
+                    ANT STATES
+                    <LineBreak/>
+                    state 0: increments. moves right for R, left for L. Cardinal.
+                    <LineBreak/>
+                    state 1: decrements. moves right for R, left for L. Cardinal.
+                    <LineBreak/>
+                    state 2: increments. moves left for R, right for L. Cardinal.
+                    <LineBreak/>
+                    state 3: increments. moves right for R, left for L. Diagonal and cardinal.
+                    <LineBreak/>
+                    <LineBreak/>
+                    RULES (1D)
+                    <LineBreak/>
+                    Rules in one dimensional automata are formatted as a byte of 8 0's and 1's.
+                    <LineBreak/>
+                    Rules in Langston's ants are formatted as any number of L's and R's, like LRR.
+                    <LineBreak/>
+                    Rules in two dimensional automata are more complicated:
+                    <LineBreak/>
+                    <LineBreak/>
+                    Rules begin with a symbol, then conditions expressed in numbers,
+                    followed by =, and the new value. Rules are separated with |.
+                    White space is ignored.
+                    <LineBreak/>
+                    <LineBreak/>
+                    Symbols:
+                    <LineBreak/>
+                    tb the rule is totalistic for a basic neighborhood (cardinals).
+                    <LineBreak/>
+                    tm the rule is totalistic for Moore's neighborhood (cardinals + diagonals).
+                    <LineBreak/>
+                    d the rule is directional (value is based on neighborhood cells' values)
+                    <LineBreak/>
+                    g the rule is generational (value is based on value of last generation)
+                    <LineBreak/>
+                    x is the current value of the cell.
+                    <LineBreak/>
+                    x+1 is the value of the cell + 1.
+                    <LineBreak/>
+                    x-1 is the value of the cell - 1.
+                    <LineBreak/>
+
+                    Numbers after tb or tm describe the total sum required to meet the condition.
+                    Numbers after d describe the direction from the current cell: 0 is right, 1 is
+                    up, 2 is left, and 3 is down. Any numbers after this check the cell value.
+                    g cannot have a number. It always means the cell's value last generation.
+                    x does not require a number, but it can have one. If it does, the number means
+                    the required value of the state.
+                    x+1, and x-1 are reserved for the right-hand side of a rule.
+                    <LineBreak/>
+                    <LineBreak/>
+                    Example strings:
+                    <LineBreak/>
+                    "tm3=1|tm2=x" Conway's Game of Life.
+                    <LineBreak/>
+                    "x=0" The cell is unconditionally set to 0.
+                    <LineBreak/>
+                    "x1=0" The cell, if it's state is 1, is set to 0.
+                    <LineBreak/>
+                    "tb3=0" Cells with cardinal sum 3 are set to 0.
+                    <LineBreak/>
+                    "tm14=x+1" Cells with Moore sum 14 are incremented.
+                    <LineBreak/>
+                    "d01=0" If the cell to the right has state 1, set this to 0.
+                    <LineBreak/>
+                    "d23=x" If the cell to the left has state 3, keep the current state.
+                    <LineBreak/>
+                    "tm4=x-1|d11=1" Moore sum 4 decrements state, and is set to 1 if cell up is 1.
+                    <LineBreak/>
+                    "d0x=x+1" Increment the cell if the one on the right matches.
+                    <LineBreak/>
+            </TextBlock>
+        </ScrollViewer>
+    </Grid>
+</Window>

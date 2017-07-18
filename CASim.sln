@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CASimProj", "CASim\CASimProj.csproj", "{ADA04FA1-900D-4583-9AC6-AB8F9789222E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{ADA04FA1-900D-4583-9AC6-AB8F9789222E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ADA04FA1-900D-4583-9AC6-AB8F9789222E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ADA04FA1-900D-4583-9AC6-AB8F9789222E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ADA04FA1-900D-4583-9AC6-AB8F9789222E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
